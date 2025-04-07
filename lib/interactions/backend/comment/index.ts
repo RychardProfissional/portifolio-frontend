@@ -1,10 +1,11 @@
-import request from "../../../api";
+import { faker } from "@faker-js/faker";
+import { api } from "../../../api";
 
 interface ICommentManager {
   create(comment: IComment): Promise<IComment>;
   getByID(id: string): Promise<IComment>;
   listByProjectID(project_id: string): Promise<IComment[]>;
-  updateText(id: string, text: string): Promise<boolean>;
+  updateText(id: string, ip: string, text: string): Promise<boolean>;
   delete(id: string): Promise<boolean>;
 }
 
@@ -12,11 +13,11 @@ class MCommentManager implements ICommentManager {
   create(comment: IComment): Promise<IComment> {
     return new Promise(
       (): IComment => ({
-        id: "",
-        ip: "",
-        user_name: "",
-        text: "",
-        project_id: "",
+        id: faker.string.uuid(),
+        ip: faker.string.uuid(),
+        user_name: faker.person.fullName(),
+        text: faker.commerce.productDescription(),
+        project_id: faker.string.uuid(),
       })
     );
   }
@@ -24,38 +25,67 @@ class MCommentManager implements ICommentManager {
   getByID(id: string): Promise<IComment> {
     return new Promise(
       (): IComment => ({
-        id: "",
-        ip: "",
-        user_name: "",
-        text: "",
-        project_id: "",
+        id: faker.string.uuid(),
+        ip: faker.string.uuid(),
+        user_name: faker.person.fullName(),
+        text: faker.commerce.productDescription(),
+        project_id: faker.string.uuid(),
       })
     );
   }
 
   listByProjectID(project_id: string): Promise<IComment[]> {
-    return new Promise((): IComment[] => [
-      {
-        id: "",
-        ip: "",
-        user_name: "",
-        text: "",
-        project_id: "",
-      },
-    ]);
+    return new Promise((): IComment[] =>
+      faker.helpers.multiple(
+        () => ({
+          id: faker.string.uuid(),
+          ip: faker.string.uuid(),
+          user_name: faker.person.fullName(),
+          text: faker.commerce.productDescription(),
+          project_id: faker.string.uuid(),
+        }),
+        { count: 5 }
+      )
+    );
   }
 
-  updateText(id: string, text: string): Promise<boolean> {
-    return new Promise((): boolean => false);
+  updateText(id: string, ip: string, text: string): Promise<boolean> {
+    return new Promise((): boolean => faker.datatype.boolean());
   }
-  
+
   delete(id: string): Promise<boolean> {
-    return new Promise((): boolean => false);
+    return new Promise((): boolean => faker.datatype.boolean());
+  }
+}
+
+class RCommentManager implements ICommentManager {
+  create(comment: IComment): Promise<IComment> {
+    return api.post("/comment", comment);
+  }
+
+  getByID(id: string): Promise<IComment> {
+    return api.get(`/comment/by_id/${id}`);
+  }
+
+  listByProjectID(project_id: string): Promise<IComment[]> {
+    return api.get(`/comment/by_project_id/${project_id}`);
+  }
+
+  updateText(id: string, ip: string, text: string): Promise<boolean> {
+    return api.patch(`/comment/${id}/${ip}`, {name: "text", value: text})
+  }
+
+  delete(id: string): Promise<boolean> {
+    return api.delete(`/comment/${id}`)
   }
 }
 
 function GetCommentManager(): ICommentManager {
-  return new MCommentManager;
+  if (process.env.NODE_ENV === "test") {
+    return new MCommentManager();
+  }
+
+  return new RCommentManager();
 }
 
 export default GetCommentManager;
