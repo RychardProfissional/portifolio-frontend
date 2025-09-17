@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { api } from "../../../api";
+import { createManager } from "../utils";
 
 interface ICommentManager {
   create(comment: IComment): Promise<IComment>;
@@ -80,12 +81,6 @@ class RCommentManager implements ICommentManager {
   }
 }
 
-function GetCommentManager(): ICommentManager {
-  if (process.env.NODE_ENV === "test") {
-    return new MCommentManager();
-  }
+const comment = createManager(MCommentManager, RCommentManager);
 
-  return new RCommentManager();
-}
-
-export default GetCommentManager;
+export default comment;
