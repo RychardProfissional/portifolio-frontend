@@ -2,7 +2,7 @@ export default function AboutSection() {
     // TODO
     
     return (
-        <section>
+        <section className="h-[calc(100vh-80px)]">
             <div>About</div>
         </section>
     );
