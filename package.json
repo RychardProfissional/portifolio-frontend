@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.2",
     "axios": "^1.8.4",
     "make": "^0.8.1",
     "next": "15.2.4",
