@@ -7,7 +7,7 @@ const socialMedias = [
     { icon: "mdi:instagram", url: "#" },
 ]
 
-export default function AboutSection() {
+export default function HeroSection() {
   return (
     <section className="min-h-[calc(100vh-80px)] flex flex-col md:flex-row items-center justify-center px-6 md:px-16 bg-white">
       <div className="flex-1 flex justify-center items-center text-center md:text-left">
