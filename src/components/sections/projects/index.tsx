@@ -73,7 +73,7 @@ export default function PorjectSection() {
             >
               <div className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "md:grid-flow-dense" : ""}`}>
                 <motion.div
-                  className={`relative overflow-hidden rounded-2xl aspect-[4/3] ${index % 2 === 1 ? "md:col-start-2" : ""}`}
+                  className={`relative overflow-hidden rounded-2xl aspect-4/3 ${index % 2 === 1 ? "md:col-start-2" : ""}`}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.4 }}
                 >

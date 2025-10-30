@@ -94,7 +94,7 @@ export default function CurriculumSection() {
                 {!showPDF ? (
                   <div className="space-y-4">
                     <div
-                      className="aspect-[3/4] bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-border hover:border-primary transition-colors cursor-pointer group"
+                      className="aspect-3/4 bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-border hover:border-primary transition-colors cursor-pointer group"
                       onClick={() => setShowPDF(true)}
                     >
                       <div className="text-center">
@@ -147,7 +147,7 @@ export default function CurriculumSection() {
                       </Button>
                     </div>
 
-                    <div className="aspect-[3/4] bg-muted rounded-lg overflow-hidden border-2 border-border">
+                    <div className="aspect-3/4 bg-muted rounded-lg overflow-hidden border-2 border-border">
                       <iframe
                         src="/pdfs/profile.pdf"
                         title="Curriculum Vitae"

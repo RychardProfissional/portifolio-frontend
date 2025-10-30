@@ -1,14 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowDown } from "lucide-react"
-import { Icon } from "@iconify/react"
+import { ArrowDown, Linkedin, Mail, Github, Instagram } from "lucide-react"
 
 const socialMedias = [
-  { icon: "mdi:linkedin", url: "https://linkedin.com/in/rychard-antony", label: "LinkedIn" },
-  { icon: "mdi:gmail", url: "mailto:rychard@example.com", label: "Email" },
-  { icon: "mdi:github", url: "https://github.com/rychard", label: "GitHub" },
-  { icon: "mdi:instagram", url: "https://instagram.com/rychard", label: "Instagram" },
+  { icon: Linkedin, url: "https://linkedin.com/in/rychard-antony", label: "LinkedIn" },
+  { icon: Mail, url: "mailto:rychard@example.com", label: "Email" },
+  { icon: Github, url: "https://github.com/rychard", label: "GitHub" },
+  { icon: Instagram, url: "https://instagram.com/rychard", label: "Instagram" },
 ]
 
 export default function Hero() {
@@ -84,9 +83,9 @@ export default function Hero() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}>
               <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wider">Conecte-se</p>
               <ul className="flex gap-4">
-                {socialMedias.map(({ icon, url, label }, index) => (
+                {socialMedias.map(({ icon: Icon, url, label }, index) => (
                   <motion.li
-                    key={icon}
+                    key={label}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1 + index * 0.1 }}
@@ -99,7 +98,7 @@ export default function Hero() {
                       whileTap={{ scale: 0.9 }}
                       aria-label={label}
                     >
-                      <Icon icon={icon} width={24} height={24} className="text-foreground" />
+                      <Icon size={24} className="text-foreground" />
                     </motion.a>
                   </motion.li>
                 ))}
@@ -116,9 +115,8 @@ export default function Hero() {
           >
             <motion.div className="relative" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
               <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
-                {/* Círculo de fundo decorativo */}
                 <motion.div
-                  className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 blur-2xl"
+                  className="absolute inset-0 rounded-full bg-linear-to-br from-accent/20 to-accent/5 blur-2xl"
                   animate={{
                     scale: [1, 1.1, 1],
                     rotate: [0, 180, 360],
@@ -130,16 +128,13 @@ export default function Hero() {
                   }}
                 />
 
-                {/* Container da foto */}
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-border bg-secondary shadow-2xl">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-muted-foreground text-xl font-medium">Foto</span>
                   </div>
-                  {/* Overlay sutil */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background/20 to-transparent" />
                 </div>
 
-                {/* Elemento decorativo flutuante */}
                 <motion.div
                   className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-accent/20 blur-xl"
                   animate={{
