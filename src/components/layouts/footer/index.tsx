@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
+      <div className="max-w-7xl mx-auto py-12">
         <div className="flex justify-between gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
