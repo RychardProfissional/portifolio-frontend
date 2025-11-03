@@ -12,28 +12,28 @@ const projects = [
       "Plataforma completa de e-commerce com painel administrativo, processamento de pagamentos e gestão de inventário.",
     tags: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
     image: "/modern-ecommerce-dashboard.png",
-    link: "#",
+    link: "/project/1",
   },
   {
     title: "SaaS Dashboard",
     description: "Dashboard analítico para SaaS com visualizações de dados em tempo real e relatórios customizáveis.",
     tags: ["React", "D3.js", "Node.js", "MongoDB"],
     image: "/analytics-dashboard-dark-theme.png",
-    link: "#",
+    link: "/project/1",
   },
   {
     title: "Mobile App Design",
     description: "Design system completo e protótipo interativo para aplicativo mobile de produtividade.",
     tags: ["Figma", "React Native", "Design System"],
     image: "/mobile-app-design-system.jpg",
-    link: "#",
+    link: "/project/1",
   },
   {
     title: "AI Chat Interface",
     description: "Interface conversacional com IA, suportando múltiplos modelos e streaming de respostas.",
     tags: ["Next.js", "OpenAI", "Vercel AI SDK", "Tailwind"],
     image: "/ai-chat-interface-modern.jpg",
-    link: "#",
+    link: "/project/1",
   },
 ]
 

@@ -66,3 +66,11 @@ export default function Footer() {
     </footer>
   )
 }
+
+export function ProjectFooter() {
+  return (
+    <footer>
+      Project footer
+    </footer>
+  )
+}

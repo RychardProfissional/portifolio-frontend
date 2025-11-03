@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ArrowLeft } from "lucide-react"
 
-export default function Navigation() {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -99,5 +99,33 @@ export default function Navigation() {
         )}
       </AnimatePresence>
     </>
+  )
+}
+
+export function ProjectHeader() {
+  return (
+    <header>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between">
+          <div className="flex flex-1 items-center justify-between h-20">
+            <motion.a
+              href="/"
+              className="text-2xl font-bold tracking-tight"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ArrowLeft />
+            </motion.a>
+          </div>
+          <div className="flex-1 flex justify-center items-center font-montserrat text-1xl">Este é o projeto tal</div>
+          <div className="flex-1"></div>
+        </div>
+      </motion.nav>
+      <div className="h-20"></div>
+    </header>
   )
 }
