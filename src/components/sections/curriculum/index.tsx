@@ -6,32 +6,58 @@ import { useRef, useState } from "react"
 import { Download, FileText, X, ZoomIn, ZoomOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+const experiences = [
+  {
+    year: "2025 - Presente",
+    role: "Desenvolvedor Full Stack",
+    company: "Fundação MT",
+    description:
+      "Atuação no desenvolvimento full stack, contribuindo para sistemas internos e aprimorando fluxos operacionais.",
+  },
+  {
+    year: "2024 - 2025",
+    role: "Analista de Desenvolvimento Web",
+    company: "Mavielo RH",
+    description:
+      "Responsável pelo levantamento de requisitos, planejamento de entregas e desenvolvimento de soluções web.",
+  },
+  {
+    year: "2024",
+    role: "Assistente de Desenvolvimento de Sistemas",
+    company: "Mavielo RH",
+    description:
+      "Manutenção de sistemas existentes, utilizando Go, Next.js e serviços AWS em ambientes de produção.",
+  },
+  {
+    year: "2023 - 2024",
+    role: "Auxiliar de Informática",
+    company: "Atacadão",
+    description:
+      "Garantia do funcionamento do sistema interno e resolução de problemas técnicos para colaboradores.",
+  },
+  {
+    year: "2023",
+    role: "Agente de Prevenção de Perdas",
+    company: "Atacadão",
+    description:
+      "Implementação de estratégias de segurança, monitoramento de riscos e registro de incidentes.",
+  },
+  {
+    year: "2022 - 2023",
+    role: "Repositor de Perecíveis",
+    company: "Mundo Novo",
+    description:
+      "Gestão e reposição de produtos perecíveis, garantindo disponibilidade e organização de estoque.",
+  },
+];
+
+
 export default function CurriculumSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [showPDF, setShowPDF] = useState(false)
   const [zoom, setZoom] = useState(100)
 
-  const experiences = [
-    {
-      year: "2023 - Presente",
-      role: "Senior Full-Stack Developer",
-      company: "Tech Innovation Co.",
-      description: "Liderando o desenvolvimento de aplicações web escaláveis usando Next.js, TypeScript e Node.js.",
-    },
-    {
-      year: "2021 - 2023",
-      role: "Full-Stack Developer",
-      company: "Digital Solutions Ltd.",
-      description: "Desenvolvimento de sistemas complexos e APIs RESTful, com foco em performance e UX.",
-    },
-    {
-      year: "2019 - 2021",
-      role: "Frontend Developer",
-      company: "Creative Agency",
-      description: "Criação de interfaces modernas e responsivas, trabalhando com React e design systems.",
-    },
-  ]
 
   return (
     <section id="experience" ref={ref} className="min-h-screen flex items-center py-24 px-6 bg-muted/30">
@@ -94,7 +120,7 @@ export default function CurriculumSection() {
                 {!showPDF ? (
                   <div className="space-y-4">
                     <div
-                      className="aspect-3/4 bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-border hover:border-primary transition-colors cursor-pointer group"
+                      className="h-[calc(100vh-350px)] bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-border hover:border-primary transition-colors cursor-pointer group"
                       onClick={() => setShowPDF(true)}
                     >
                       <div className="text-center">
@@ -147,7 +173,7 @@ export default function CurriculumSection() {
                       </Button>
                     </div>
 
-                    <div className="aspect-3/4 bg-muted rounded-lg overflow-hidden border-2 border-border">
+                    <div className="h-[calc(100vh-350px)] bg-muted rounded-lg overflow-hidden border-2 border-border">
                       <iframe
                         src="/pdfs/profile.pdf"
                         title="Curriculum Vitae"
