@@ -1,16 +1,16 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, Twitter, Heart } from "lucide-react"
+import { Github, Linkedin, Mail, Heart, Instagram } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socials = [
-    { name: "GitHub", icon: Github, href: "https://github.com" },
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-    { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
-    { name: "Email", icon: Mail, href: "mailto:rychard@example.com" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/rychardprofissional", name: "LinkedIn" },
+    { icon: Mail, href: "mailto:rychard.professional@gmail.com", name: "Email" },
+    { icon: Github, href: "https://github.com/RychardProfissional", name: "GitHub" },
+    { icon: Instagram, href: "https://www.instagram.com/rzd355", name: "Instagram" },
   ]
 
   return (

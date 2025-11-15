@@ -2,15 +2,23 @@
 
 import { motion } from "framer-motion"
 import { ArrowDown, Linkedin, Mail, Github, Instagram } from "lucide-react"
+import Image from "next/image"
 
 const socialMedias = [
-  { icon: Linkedin, url: "https://linkedin.com/in/rychard-antony", label: "LinkedIn" },
-  { icon: Mail, url: "mailto:rychard@example.com", label: "Email" },
-  { icon: Github, url: "https://github.com/rychard", label: "GitHub" },
-  { icon: Instagram, url: "https://instagram.com/rychard", label: "Instagram" },
+  { icon: Linkedin, url: "https://www.linkedin.com/in/rychardprofissional", label: "LinkedIn" },
+  { icon: Mail, url: "mailto:rychard.professional@gmail.com", label: "Email" },
+  { icon: Github, url: "https://github.com/RychardProfissional", label: "GitHub" },
+  { icon: Instagram, url: "https://www.instagram.com/rzd355", label: "Instagram" },
 ]
 
 export default function Hero() {
+  const handleBottonScroolClick = () => {
+    const workSection = document.getElementById("experience")
+    if (workSection) {
+      workSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <section id="hero" className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
@@ -113,7 +121,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-            <motion.div className="relative" whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
+            <div className="relative">
               <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
                 <motion.div
                   className="absolute inset-0 rounded-full bg-linear-to-br from-accent/20 to-accent/5 blur-2xl"
@@ -129,8 +137,8 @@ export default function Hero() {
                 />
 
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-border bg-secondary shadow-2xl">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-muted-foreground text-xl font-medium">Foto</span>
+                  <div className="absolute inset-0 flex items-baseline justify-center">
+                    <Image src="/imgs/profile.jpg" alt="Rychard Antony" width={500} height={1000} className="w-full object-cover" />
                   </div>
                   <div className="absolute inset-0 bg-linear-to-t from-background/20 to-transparent" />
                 </div>
@@ -147,15 +155,16 @@ export default function Hero() {
                   }}
                 />
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
 
         <motion.div
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse", duration: 1.5 }}
+          onClick={handleBottonScroolClick}
         >
           <ArrowDown className="text-muted-foreground" size={32} />
         </motion.div>
