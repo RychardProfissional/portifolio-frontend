@@ -89,7 +89,7 @@ export default function PorjectSection() {
                     transition={{ duration: 0.3 }}
                   >
                     <motion.a
-                      href={project.link}
+                      // href={project.link}
                       className="px-6 py-3 bg-background text-foreground rounded-full font-medium flex items-center gap-2"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
