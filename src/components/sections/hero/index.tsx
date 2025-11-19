@@ -27,7 +27,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto w-full">
-        <div className="flex flex-col md:flex-row  justify-between">
+        <div className="flex flex-col md:flex-row justify-between">
           {/* Coluna esquerda - Texto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -36,7 +36,7 @@ export default function Hero() {
             className="order-2 md:order-1"
           >
             <motion.p
-              className="text-sm md:text-base text-muted-foreground mb-4 tracking-widest uppercase"
+              className="text-sm md:text-base hidden md:block text-muted-foreground mb-4 tracking-widest uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -45,7 +45,7 @@ export default function Hero() {
             </motion.p>
 
             <motion.h1
-              className="text-7xl md:text-8xl lg:text-9xl font-bold leading-none mb-6 tracking-tighter"
+              className="text-6xl text-center md:text-left md:text-8xl lg:text-9xl font-bold leading-none mb-6 tracking-tighter"
               style={{ fontFamily: "var(--font-space)" }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -56,7 +56,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 leading-relaxed text-balance"
+              className="text-lg text-center md:text-left md:text-xl text-muted-foreground max-w-xl mb-8 leading-relaxed text-balance"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -72,7 +72,7 @@ export default function Hero() {
             >
               <motion.a
                 href="#work"
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors"
+                className="px-8 hidden md:flex py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -80,7 +80,7 @@ export default function Hero() {
               </motion.a>
               <motion.a
                 href="#contact"
-                className="px-8 py-4 border border-border rounded-full font-medium hover:bg-secondary transition-colors"
+                className="px-8 py-4 m-auto md:m-0 border border-border rounded-full font-medium hover:bg-secondary transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -88,7 +88,12 @@ export default function Hero() {
               </motion.a>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}>
+            <motion.div
+             initial={{ opacity: 0, y: 20 }} 
+             animate={{ opacity: 1, y: 0 }} 
+             transition={{ delay: 0.9 }}
+             className="hidden md:block"
+            >
               <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wider">Conecte-se</p>
               <ul className="flex gap-4">
                 {socialMedias.map(({ icon: Icon, url, label }, index) => (
@@ -119,7 +124,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="order-1 md:order-2 flex justify-center lg:justify-end"
+            className="order-1 md:order-2 flex justify-center md:mt-0 mt-24 lg:justify-end"
           >
             <div className="relative">
               <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
@@ -160,7 +165,7 @@ export default function Hero() {
         </div>
 
         <motion.div
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer"
+          className="absolute hidden md:flex bottom-12 left-1/2 -translate-x-1/2 cursor-pointer"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse", duration: 1.5 }}

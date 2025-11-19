@@ -62,7 +62,7 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Info */}
-          <div className="space-y-6 animate-slideInFromLeft">
+          <div className="space-y-6 animate-slideInFromLeft hidden md:block">
             <div className="p-6 rounded-xl bg-card border border-border">
               <h3 className="text-lg font-semibold mb-2 text-foreground">Email</h3>
               <a

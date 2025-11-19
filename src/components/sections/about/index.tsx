@@ -6,7 +6,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-slideInFromLeft">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Sobre Mim</h2>
+            <h2 className="text-4xl md:text-5xl md:text-left text-center font-bold mb-6">Sobre Mim</h2>
 
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>

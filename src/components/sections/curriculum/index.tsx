@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Download, FileText, X, ZoomIn, ZoomOut } from "lucide-react"
+import { Download, FileText, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const experiences = [
@@ -108,72 +108,73 @@ export default function CurriculumSection() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="lg:sticky lg:top-24 h-fit"
             >
-              <div className="bg-background border-2 border-border rounded-2xl p-8 shadow-xl">
+              <div className="bg-background border-2 border-border rounded-2xl p-6 md:p-8 shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <FileText className="w-8 h-8 text-primary" />
                   <div>
-                    <h3 className="text-2xl font-bold">Currículo Completo</h3>
+                    <h3 className="md:text-2xl font-bold">Currículo Completo</h3>
                     <p className="text-sm text-muted-foreground">Visualize ou baixe meu CV</p>
                   </div>
                 </div>
-
-                {!showPDF ? (
-                  <div className="space-y-4">
-                    <div
-                      className="h-[calc(100vh-350px)] bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-border hover:border-primary transition-colors cursor-pointer group"
-                      onClick={() => setShowPDF(true)}
-                    >
-                      <div className="text-center">
-                        <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                        <p className="text-lg font-semibold mb-2">Clique para visualizar</p>
-                        <p className="text-sm text-muted-foreground">Curriculum Vitae - PDF</p>
+                <div className="space-y-4">        
+                  {!showPDF ? (
+                    <>        
+                      <div
+                        className="h-[calc(100vh-350px)] bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-border hover:border-primary transition-colors cursor-pointer group"
+                        onClick={() => setShowPDF(true)}
+                      >
+                        <div className="text-center">
+                          <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                          <p className="text-lg font-semibold mb-2">Clique para visualizar</p>
+                          <p className="text-sm text-muted-foreground">Curriculum Vitae - PDF</p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="flex gap-3">
-                      <Button onClick={() => setShowPDF(true)} className="flex-1 h-12 text-base" size="lg">
-                        <FileText className="w-5 h-5 mr-2" />
-                        Visualizar
-                      </Button>
+                      <div className="flex gap-3 md:flex-row flex-col">
+                        <Button onClick={() => setShowPDF(true)} className="flex-1 md:h-12 min-h-10 text-base" size="lg">
+                          <FileText className="w-5 h-5 mr-2" />
+                          Visualizar
+                        </Button>
+                        <Button
+                          onClick={() => window.open("/pdfs/profile.pdf", "_blank")}
+                          variant="outline"
+                          className="flex-1 md:h-12 min-h-10 text-base"
+                          size="lg"
+                        >
+                          <Download className="w-5 h-5 mr-2" />
+                          Baixar PDF
+                        </Button>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex items-center justify-between gap-2">
+                        <Button onClick={() => setShowPDF(false)} variant="ghost" size="sm">
+                          <X className="w-4 h-4" />
+                        </Button>
+                      </div>
+
+                      <div className="h-[calc(100vh-350px)] bg-muted rounded-lg overflow-hidden border-2 border-border">
+                        <iframe
+                          src="/pdfs/profile.pdf"
+                          title="Curriculum Vitae"
+                          className="w-full h-full border-none"
+                          style={{ transform: `scale(${zoom / 100})`, transformOrigin: "top left" }}
+                        />
+                      </div>
+
                       <Button
                         onClick={() => window.open("/pdfs/profile.pdf", "_blank")}
                         variant="outline"
-                        className="flex-1 h-12 text-base"
+                        className="w-full h-12 text-base"
                         size="lg"
                       >
                         <Download className="w-5 h-5 mr-2" />
                         Baixar PDF
                       </Button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between gap-2">
-                      <Button onClick={() => setShowPDF(false)} variant="ghost" size="sm">
-                        <X className="w-4 h-4" />
-                      </Button>
-                    </div>
-
-                    <div className="h-[calc(100vh-350px)] bg-muted rounded-lg overflow-hidden border-2 border-border">
-                      <iframe
-                        src="/pdfs/profile.pdf"
-                        title="Curriculum Vitae"
-                        className="w-full h-full border-none"
-                        style={{ transform: `scale(${zoom / 100})`, transformOrigin: "top left" }}
-                      />
-                    </div>
-
-                    <Button
-                      onClick={() => window.open("/pdfs/profile.pdf", "_blank")}
-                      variant="outline"
-                      className="w-full h-12 text-base"
-                      size="lg"
-                    >
-                      <Download className="w-5 h-5 mr-2" />
-                      Baixar PDF
-                    </Button>
-                  </div>
-                )}
+                    </>
+                  )}
+                </div>
               </div>
             </motion.div>
           </div>
