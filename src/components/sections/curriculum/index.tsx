@@ -149,25 +149,6 @@ export default function CurriculumSection() {
                 ) : (
                   <div className="space-y-4">
                     <div className="flex items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <Button
-                          onClick={() => setZoom(Math.max(50, zoom - 10))}
-                          variant="outline"
-                          size="sm"
-                          disabled={zoom <= 50}
-                        >
-                          <ZoomOut className="w-4 h-4" />
-                        </Button>
-                        <span className="text-sm font-medium min-w-[60px] text-center">{zoom}%</span>
-                        <Button
-                          onClick={() => setZoom(Math.min(150, zoom + 10))}
-                          variant="outline"
-                          size="sm"
-                          disabled={zoom >= 150}
-                        >
-                          <ZoomIn className="w-4 h-4" />
-                        </Button>
-                      </div>
                       <Button onClick={() => setShowPDF(false)} variant="ghost" size="sm">
                         <X className="w-4 h-4" />
                       </Button>

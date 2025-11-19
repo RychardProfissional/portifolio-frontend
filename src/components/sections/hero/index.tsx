@@ -27,13 +27,13 @@ export default function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto w-full">
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row  justify-between">
           {/* Coluna esquerda - Texto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1"
+            className="order-2 md:order-1"
           >
             <motion.p
               className="text-sm md:text-base text-muted-foreground mb-4 tracking-widest uppercase"
@@ -119,7 +119,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+            className="order-1 md:order-2 flex justify-center lg:justify-end"
           >
             <div className="relative">
               <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
