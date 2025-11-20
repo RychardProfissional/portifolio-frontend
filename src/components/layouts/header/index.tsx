@@ -34,7 +34,7 @@ export default function Header() {
           scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : ""
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto px-6 md:px-4">
           <div className="flex items-center justify-between h-20">
             <motion.a
               href="#hero"
@@ -50,11 +50,18 @@ export default function Header() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="
+                    relative
+                    text-sm font-medium text-muted-foreground hover:text-foreground
+                    transition-colors
+                    after:content-[''] after:absolute after:left-0 after:bottom-0
+                    after:h-0.5 after:w-full after:bg-foreground
+                    after:origin-left after:scale-x-0 after:transition-transform after:duration-300
+                    hover:after:scale-x-100
+                  "
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
                 >
                   {item.name}
                 </motion.a>

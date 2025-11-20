@@ -56,8 +56,6 @@ export default function CurriculumSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [showPDF, setShowPDF] = useState(false)
-  const [zoom, setZoom] = useState(100)
-
 
   return (
     <section id="experience" ref={ref} className="min-h-screen flex items-center py-24 px-6 bg-muted/30">
@@ -159,7 +157,6 @@ export default function CurriculumSection() {
                           src="/pdfs/profile.pdf"
                           title="Curriculum Vitae"
                           className="w-full h-full border-none"
-                          style={{ transform: `scale(${zoom / 100})`, transformOrigin: "top left" }}
                         />
                       </div>
 
