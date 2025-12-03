@@ -1,11 +1,18 @@
+version: "3.8"
+
 services:
-  app:
-    build: 
-      context: .
-      dockerfile: ./docker/app/Dockerfile
-    ports: 
-      - "3000:3000"
+  postgres:
+    image: postgres:15-alpine
+    container_name: portfolio-postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: portfolio
+    ports:
+      - "5432:5432"
     volumes:
-      - .:/app
-    env_file: ./.env
-    command: ["make", "startDev"]
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
