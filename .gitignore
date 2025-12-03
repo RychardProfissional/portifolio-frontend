@@ -26,6 +26,7 @@
 
 # prisma
 /prisma/generated/
+/src/prisma-generated/
 
 # debug
 npm-debug.log*

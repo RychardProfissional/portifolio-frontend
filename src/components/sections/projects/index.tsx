@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ExternalLink, ArrowUpRight, Github } from "lucide-react";
-import { Project } from "@prisma/client";
+import { Project } from "@/prisma-generated";
 import Link from "next/link";
 
 export default function ProjectsSection() {

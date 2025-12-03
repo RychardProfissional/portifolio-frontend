@@ -19,7 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Comment } from "@prisma/client";
+import { Comment } from "@/prisma-generated";
 import { toast } from "sonner";
 
 const formSchema = z.object({
