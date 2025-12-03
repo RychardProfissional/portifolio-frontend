@@ -183,7 +183,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             index % 2 === 1 ? "justify-end" : "justify-start"
           }`}
         >
-          {project.tags.map((tag: string) => (
+          {(project.tags ?? []).map((tag: string) => (
             <span
               key={tag}
               className="px-3 py-1 text-sm rounded-full border border-border bg-secondary/30 text-secondary-foreground"

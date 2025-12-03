@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "npm run prisma:generate && npm run prisma:migrate:deploy && npm run prisma:seed && npm run site:build",
+    "build": "&& npm run prisma:migrate:deploy && npm run prisma:seed && npm run site:build",
     "dev": "next dev",
+    "postinstall": "prisma generate",
     "lint": "eslint .",
     "start": "next start",
     "site:build": "next build",
@@ -86,6 +87,7 @@
     "typescript": "^5.9.3"
   },
   "prisma": {
-    "seed": "tsx prisma/seed.ts"
+    "seed": "tsx prisma/seed.ts",
+    "schema": "prisma/schema.prisma"
   }
 }

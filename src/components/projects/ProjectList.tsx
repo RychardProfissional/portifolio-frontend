@@ -67,14 +67,14 @@ export function ProjectList() {
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
-              {project.technologies.slice(0, 3).map((tech) => (
+              {((project.technologies ?? []) as string[]).slice(0, 3).map((tech) => (
                 <Badge key={tech} variant="secondary">
                   {tech}
                 </Badge>
               ))}
-              {project.technologies.length > 3 && (
+              {(project.technologies ?? []).length > 3 && (
                 <Badge variant="outline">
-                  +{project.technologies.length - 3}
+                  +{(project.technologies ?? []).length - 3}
                 </Badge>
               )}
             </div>
