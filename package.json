@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "npm run prisma:generate && npm run prisma:migrate:deploy && npm run site:build",
+    "build": "npm run prisma:generate && npm run prisma:migrate:deploy && npm run prisma:seed && npm run site:build",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start",
     "site:build": "next build",
     "prisma:generate": "npx prisma generate",
     "prisma:migrate:dev": "npx prisma migrate dev",
-    "prisma:migrate:deploy": "npx prisma migrate deploy"
+    "prisma:migrate:deploy": "npx prisma migrate deploy",
+    "prisma:seed": "npx prisma db seed"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
