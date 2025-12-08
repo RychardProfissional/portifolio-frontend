@@ -47,7 +47,7 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
       <div className="text-center py-20">
         <h2 className="text-2xl font-bold mb-4">Project not found</h2>
         <Button asChild>
-          <Link href="/projects">Back to Projects</Link>
+          <Link href="/">Back to Home</Link>
         </Button>
       </div>
     );
@@ -56,8 +56,8 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <Button variant="ghost" asChild className="mb-6">
-        <Link href="/projects" className="flex items-center gap-2">
-          <ArrowLeft className="w-4 h-4" /> Back to Projects
+        <Link href="/" className="flex items-center gap-2">
+          <ArrowLeft className="w-4 h-4" /> Back to Home
         </Link>
       </Button>
 

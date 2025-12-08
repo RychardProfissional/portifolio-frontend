@@ -20,7 +20,7 @@ export default function Header() {
     { name: "Início", href: "#hero" },
     { name: "Sobre", href: "#about" },
     { name: "Experiência", href: "#experience" },
-    { name: "Trabalhos", href: "#work" },
+    { name: "Trabalhos", href: "/projects" },
     { name: "Skills", href: "#skills" },
     { name: "Contato", href: "#contact" },
   ];
@@ -112,31 +112,5 @@ export default function Header() {
         )}
       </AnimatePresence>
     </>
-  );
-}
-
-export function ProjectHeader() {
-  return (
-    <header>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
-      >
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <motion.a
-            href="/"
-            className="p-2 rounded-full hover:bg-secondary transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <ArrowLeft size={24} />
-          </motion.a>
-          <span className="font-semibold text-lg">Detalhes do Projeto</span>
-          <div className="w-10" /> {/* Spacer for centering */}
-        </div>
-      </motion.nav>
-      <div className="h-20" />
-    </header>
   );
 }

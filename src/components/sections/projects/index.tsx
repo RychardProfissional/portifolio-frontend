@@ -72,10 +72,26 @@ export default function ProjectsSection() {
             </motion.div>
 
             <div className="grid grid-cols-1 gap-20 md:gap-32">
-              {projects.map((project, index) => (
+              {projects.slice(0, 4).map((project, index) => (
                 <ProjectCard key={project.id} project={project} index={index} />
               ))}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-24 text-center"
+            >
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-1"
+              >
+                Ver Todos os Projetos
+                <ArrowUpRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
           </>
         )}
       </div>
