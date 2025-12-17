@@ -39,15 +39,15 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
   }, [slug]);
 
   if (loading) {
-    return <div className="text-center py-20">Loading project details...</div>;
+    return <div className="text-center py-20">Carregando detalhes do projeto...</div>;
   }
 
   if (!project) {
     return (
       <div className="text-center py-20">
-        <h2 className="text-2xl font-bold mb-4">Project not found</h2>
+        <h2 className="text-2xl font-bold mb-4">Projeto não encontrado</h2>
         <Button asChild>
-          <Link href="/">Back to Home</Link>
+          <Link href="/projects">Voltar para Projetos</Link>
         </Button>
       </div>
     );
@@ -56,8 +56,8 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <Button variant="ghost" asChild className="mb-6">
-        <Link href="/" className="flex items-center gap-2">
-          <ArrowLeft className="w-4 h-4" /> Back to Home
+        <Link href="/projects" className="flex items-center gap-2">
+          <ArrowLeft className="w-4 h-4" /> Voltar para Projetos
         </Link>
       </Button>
 
@@ -100,7 +100,7 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <ExternalLink className="mr-2 w-4 h-4" /> Live Demo
+                <ExternalLink className="mr-2 w-4 h-4" /> Ver Demo
               </Link>
             </Button>
           )}
@@ -108,14 +108,14 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
       </div>
 
       <div className="prose dark:prose-invert max-w-none mb-12">
-        <h2 className="text-2xl font-bold mb-4">Overview</h2>
+        <h2 className="text-2xl font-bold mb-4">Visão Geral</h2>
         <p className="text-lg leading-relaxed mb-6">
           {project.longDescription}
         </p>
 
         {project.features && project.features.length > 0 && (
           <>
-            <h3 className="text-xl font-bold mb-3">Key Features</h3>
+            <h3 className="text-xl font-bold mb-3">Principais Funcionalidades</h3>
             <ul className="list-disc pl-6 mb-6">
               {project.features.map((feature, index) => (
                 <li key={index}>{feature}</li>
@@ -126,7 +126,7 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
 
         {project.challenges && (
           <>
-            <h3 className="text-xl font-bold mb-3">Challenges & Solutions</h3>
+            <h3 className="text-xl font-bold mb-3">Desafios e Soluções</h3>
             <p className="mb-6">{project.challenges}</p>
           </>
         )}

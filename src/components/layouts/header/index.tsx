@@ -17,12 +17,12 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { name: "Início", href: "#hero" },
-    { name: "Sobre", href: "#about" },
-    { name: "Experiência", href: "#experience" },
-    { name: "Trabalhos", href: "/projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Contato", href: "#contact" },
+    { name: "Início", href: "/#hero" },
+    { name: "Experiência", href: "/#experience" },
+    { name: "Trabalhos", href: "/#work" },
+    { name: "Sobre", href: "/#about" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Contato", href: "/#contact" },
   ];
 
   return (
@@ -40,7 +40,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.a
-              href="#hero"
+              href="/#hero"
               className="text-2xl font-bold tracking-tighter relative group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
