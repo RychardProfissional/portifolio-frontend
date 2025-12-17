@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { CommentSection } from "@/components/comments/CommentSection";
 
 interface ProjectWithComments extends Project {
@@ -15,10 +16,13 @@ interface ProjectWithComments extends Project {
 interface ProjectDetailProps {
   slug: string;
 }
-
 export function ProjectDetail({ slug }: ProjectDetailProps) {
   const [project, setProject] = useState<ProjectWithComments | null>(null);
   const [loading, setLoading] = useState(true);
+  const searchParams = useSearchParams();
+  const from = searchParams.get("from");
+  const backLink = from === "home" ? "/" : "/projects";
+  const backText = from === "home" ? "Voltar para Início" : "Voltar para Projetos";
 
   useEffect(() => {
     async function fetchProject() {
@@ -38,16 +42,12 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
     fetchProject();
   }, [slug]);
 
-  if (loading) {
-    return <div className="text-center py-20">Carregando detalhes do projeto...</div>;
-  }
-
   if (!project) {
     return (
       <div className="text-center py-20">
         <h2 className="text-2xl font-bold mb-4">Projeto não encontrado</h2>
         <Button asChild>
-          <Link href="/projects">Voltar para Projetos</Link>
+          <Link href={backLink}>{backText}</Link>
         </Button>
       </div>
     );
@@ -56,8 +56,8 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <Button variant="ghost" asChild className="mb-6">
-        <Link href="/projects" className="flex items-center gap-2">
-          <ArrowLeft className="w-4 h-4" /> Voltar para Projetos
+        <Link href={backLink} className="flex items-center gap-2">
+          <ArrowLeft className="w-4 h-4" /> {backText}
         </Link>
       </Button>
 

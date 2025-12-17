@@ -210,7 +210,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         <Link
-          href={`/projects/${project.slug}`}
+          href={`/projects/${project.slug}?from=home`}
           className="inline-flex items-center gap-2 text-foreground font-medium hover:text-primary transition-colors group/link"
         >
           Ver Detalhes

@@ -94,7 +94,6 @@ export default function Hero() {
             delay: 2,
           }}
         />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]" />
       </div>
 
       <div className="max-w-7xl mx-auto w-full px-6">
@@ -148,7 +147,7 @@ export default function Hero() {
               transition={{ delay: 0.6 }}
             >
               <motion.a
-                href="#work"
+                href="/projects"
                 className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-1"
                 whileTap={{ scale: 0.95 }}
               >
