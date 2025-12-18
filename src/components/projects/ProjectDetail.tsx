@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Project, Comment } from "@/prisma-generated";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -41,6 +42,53 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
 
     fetchProject();
   }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8 max-w-4xl">
+        <div className="mb-6">
+          <Skeleton className="h-10 w-40" />
+        </div>
+
+        <Skeleton className="w-full h-64 md:h-96 rounded-xl mb-8 shadow-xl" />
+
+        <div className="flex flex-col md:flex-row justify-between items-start gap-4 mb-8">
+          <div className="space-y-3">
+            <Skeleton className="h-10 w-64 md:w-96" />
+            <div className="flex gap-2">
+              <Skeleton className="h-6 w-20 rounded-full" />
+              <Skeleton className="h-6 w-24 rounded-full" />
+              <Skeleton className="h-6 w-16 rounded-full" />
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <Skeleton className="h-10 w-28" />
+            <Skeleton className="h-10 w-32" />
+          </div>
+        </div>
+
+        <div className="space-y-6 mb-12">
+          <div>
+            <Skeleton className="h-8 w-48 mb-4" />
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-3/4" />
+            </div>
+          </div>
+
+          <div>
+            <Skeleton className="h-7 w-64 mb-3" />
+            <div className="space-y-2 pl-6">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-11/12" />
+              <Skeleton className="h-4 w-10/12" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!project) {
     return (

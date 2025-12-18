@@ -1,13 +1,13 @@
 generator client {
-  provider = "prisma-client-js"
-  engineType = "client"
-  output = "../src/prisma-generated"
+  provider      = "prisma-client-js"
+  engineType    = "client"
+  output        = "../src/prisma-generated"
   binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
   provider  = "postgresql"
-  url       = env("DB_POSTGRES_PRISMA_URL") 
+  url       = env("DB_POSTGRES_PRISMA_URL")
   directUrl = env("DB_POSTGRES_URL_NON_POOLING")
 }
 
@@ -33,14 +33,15 @@ model Project {
 }
 
 model Comment {
-  id        String   @id @default(uuid())
-  content   String   @db.Text
-  email     String
-  name      String
-  rating    Int      @default(5)
-  createdAt DateTime @default(now())
-  projectId String
-  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  id                  String   @id @default(uuid())
+  content             String   @db.Text
+  email               String
+  name                String
+  rating              Int      @default(5)
+  policyUpdateConsent Boolean  @default(false)
+  createdAt           DateTime @default(now())
+  projectId           String
+  project             Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
 
   @@unique([email, projectId]) // One comment per email per project
   @@map("portifolio_comment")

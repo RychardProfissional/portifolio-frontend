@@ -34,9 +34,7 @@ const formSchema = z.object({
     message: "Comentário deve ter pelo menos 10 caracteres.",
   }),
   rating: z.number().min(1).max(5),
-  consent: z.boolean().refine((val) => val === true, {
-    message: "Você deve concordar com a política de privacidade para comentar.",
-  }),
+  policyUpdateConsent: z.boolean().default(false).optional(),
 });
 
 interface CommentSectionProps {
@@ -58,7 +56,7 @@ export function CommentSection({
       email: "",
       content: "",
       rating: 5,
-      consent: false,
+      policyUpdateConsent: false,
     },
   });
 
@@ -179,7 +177,7 @@ export function CommentSection({
 
               <FormField
                 control={form.control}
-                name="consent"
+                name="policyUpdateConsent"
                 render={({ field }) => (
                   <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                     <FormControl>
@@ -190,7 +188,7 @@ export function CommentSection({
                     </FormControl>
                     <div className="space-y-1 leading-none">
                       <FormLabel>
-                        Concordo com a{" "}
+                        (Opcional) Desejo receber e-mails apenas quando houver alterações na{" "}
                         <a
                           href="/privacy"
                           target="_blank"
@@ -200,7 +198,7 @@ export function CommentSection({
                         </a>
                       </FormLabel>
                       <p className="text-sm text-muted-foreground">
-                        Seus dados serão armazenados para evitar spam e exibir seu comentário.
+                        Você pode revogar este consentimento a qualquer momento.
                       </p>
                     </div>
                     <FormMessage />

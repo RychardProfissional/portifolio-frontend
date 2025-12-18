@@ -13,84 +13,87 @@ export default function PrivacyPage() {
           </p>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">1. Introdução</h2>
+            <h2 className="text-2xl font-bold mb-4">1. Introdução e Bases Legais</h2>
             <p>
-              A sua privacidade é importante para nós. É política do portfólio de Rychard Antony respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site.
+              A sua privacidade é importante para nós. Esta política descreve como coletamos, usamos e protegemos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
             </p>
             <p>
-              Esta política tem como objetivo informar como coletamos, usamos e protegemos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+              O tratamento dos seus dados pessoais neste portfólio baseia-se em:
             </p>
+            <ul className="list-disc pl-6 mb-4">
+              <li>
+                <strong>Legítimo Interesse (Art. 7º, IX da LGPD):</strong> Para o processamento e exibição dos comentários públicos nos projetos, visando a interação e feedback profissional.
+              </li>
+              <li>
+                <strong>Consentimento (Art. 7º, I da LGPD):</strong> Exclusivamente para o envio opcional de e-mails notificando sobre alterações nesta Política de Privacidade.
+              </li>
+            </ul>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">2. Coleta de Dados</h2>
             <p>
-              Coletamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço ou funcionalidade. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento.
-            </p>
-            <p>
-              Os dados coletados através do formulário de comentários incluem:
+              Coletamos informações pessoais apenas quando necessário para as finalidades descritas. Os dados coletados incluem:
             </p>
             <ul className="list-disc pl-6 mb-4">
-              <li><strong>Nome:</strong> Para identificação do autor do comentário.</li>
-              <li><strong>E-mail:</strong> Para contato caso necessário e validação de autenticidade (não será exibido publicamente).</li>
-              <li><strong>Conteúdo do Comentário:</strong> A opinião ou mensagem deixada por você.</li>
+              <li><strong>Dados de Identificação:</strong> Nome (para exibição pública) e E-mail (para validação e contato administrativo, não exibido publicamente).</li>
+              <li><strong>Conteúdo:</strong> O texto do seu comentário e avaliação.</li>
+              <li><strong>Dados Técnicos:</strong> Endereço IP e informações do navegador (User-Agent) são coletados automaticamente para fins de segurança, prevenção de spam e abusos.</li>
             </ul>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">3. Finalidade do Tratamento</h2>
             <p>
-              Utilizamos seus dados pessoais para as seguintes finalidades:
+              Utilizamos seus dados para:
             </p>
             <ul className="list-disc pl-6 mb-4">
-              <li><strong>Exibição de Comentários:</strong> Permitir que seu comentário seja visível nos projetos do portfólio.</li>
-              <li><strong>Segurança e Prevenção de Spam:</strong> Monitorar e evitar o envio de mensagens automáticas, ofensivas ou maliciosas.</li>
-              <li><strong>Melhoria da Experiência:</strong> Entender o engajamento dos usuários com os projetos apresentados.</li>
+              <li><strong>Exibição de Comentários:</strong> Publicar seu feedback nos projetos do portfólio.</li>
+              <li><strong>Segurança:</strong> Monitorar e prevenir atividades maliciosas ou spam.</li>
+              <li><strong>Comunicação (Opcional):</strong> Enviar notificações por e-mail estritamente sobre atualizações desta Política de Privacidade, caso você tenha optado por recebê-las.</li>
+            </ul>
+            <p>
+              <strong>Atenção:</strong> Não utilizamos seus dados para fins de marketing, publicidade ou envio de newsletters não solicitadas.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold mb-4">4. Armazenamento e Operadores</h2>
+            <p>
+              Utilizamos parceiros confiáveis para o processamento e armazenamento de dados:
+            </p>
+            <ul className="list-disc pl-6 mb-4">
+              <li><strong>Supabase:</strong> Banco de dados em nuvem onde as informações são armazenadas com segurança.</li>
+              <li><strong>Vercel:</strong> Plataforma de hospedagem e execução do código do site.</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">4. Armazenamento e Operadores de Dados</h2>
+            <h2 className="text-2xl font-bold mb-4">5. Seus Direitos</h2>
             <p>
-              Para garantir a segurança e disponibilidade do serviço, utilizamos parceiros tecnológicos confiáveis para o processamento e armazenamento de dados:
+              Você possui os seguintes direitos sobre seus dados:
             </p>
             <ul className="list-disc pl-6 mb-4">
-              <li><strong>Supabase:</strong> Atua como nosso banco de dados na nuvem. É onde as informações dos comentários são armazenadas de forma segura.</li>
-              <li><strong>Vercel:</strong> Plataforma de hospedagem onde o código do site (frontend) é executado e distribuído.</li>
+              <li>Acesso, correção e exclusão dos seus dados.</li>
+              <li>Confirmação da existência de tratamento.</li>
+              <li><strong>Revogação do Consentimento:</strong> Você pode optar por deixar de receber os e-mails sobre alterações na política a qualquer momento.</li>
             </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold mb-4">6. Consentimento e Comentários</h2>
             <p>
-              Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.
+              O envio de comentários <strong>não requer consentimento prévio</strong> (checkbox), pois baseia-se no legítimo interesse de promover interação no portfólio. Ao comentar, você declara estar ciente desta Política de Privacidade.
+            </p>
+            <p>
+              A opção de receber e-mails sobre atualizações da política é <strong>totalmente voluntária</strong> e não impede o envio do seu comentário.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">5. Compartilhamento de Dados</h2>
+            <h2 className="text-2xl font-bold mb-4">7. Contato</h2>
             <p>
-              Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">6. Seus Direitos (Titular dos Dados)</h2>
-            <p>
-              De acordo com a LGPD, você tem direito a:
-            </p>
-            <ul className="list-disc pl-6 mb-4">
-              <li>Confirmar a existência de tratamento de dados.</li>
-              <li>Acessar seus dados.</li>
-              <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
-              <li>Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários ou excessivos.</li>
-              <li>Revogar seu consentimento a qualquer momento.</li>
-            </ul>
-            <p>
-              Para exercer seus direitos, entre em contato através dos canais disponíveis na seção de contato deste site.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">7. Consentimento</h2>
-            <p>
-              Ao deixar um comentário em nosso site, você concorda com o processamento de seus dados conforme descrito nesta Política de Privacidade.
+              Para exercer seus direitos ou tirar dúvidas sobre esta política, entre em contato através dos canais disponíveis no site.
             </p>
           </section>
         </div>

@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { projectId, name, email, content, rating } = body;
+    const { projectId, name, email, content, rating, policyUpdateConsent } = body;
 
     if (!projectId || !name || !email || !content || !rating) {
       return NextResponse.json(
@@ -22,6 +22,7 @@ export async function POST(request: Request) {
         email,
         content,
         rating: parseInt(rating),
+        policyUpdateConsent: policyUpdateConsent || false,
       },
     });
 

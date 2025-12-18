@@ -87,10 +87,11 @@ export default function Footer() {
               />{" "}
               por Rychard Antony.
             </p>
-            <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Política de Privacidade
-            </a>
           </div>
+          
+          <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            Política de Privacidade
+          </a>
 
           <button
             onClick={scrollToTop}
