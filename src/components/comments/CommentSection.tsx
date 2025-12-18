@@ -24,13 +24,13 @@ import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
+    message: "Nome deve ter pelo menos 2 caracteres.",
   }),
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: "Por favor, insira um endereço de email válido.",
   }),
   content: z.string().min(10, {
-    message: "Comment must be at least 10 characters.",
+    message: "Comentário deve ter pelo menos 10 caracteres.",
   }),
   rating: z.number().min(1).max(5),
 });
@@ -72,16 +72,16 @@ export function CommentSection({
       });
 
       if (!response.ok) {
-        throw new Error("Failed to submit comment");
+        throw new Error("Falha ao enviar comentário");
       }
 
       const newComment = await response.json();
       setComments((prev) => [newComment, ...prev]);
       form.reset();
-      toast.success("Comment submitted successfully!");
+      toast.success("Comentário enviado com sucesso!");
     } catch (error) {
       console.error(error);
-      toast.error("Failed to submit comment. Please try again.");
+      toast.error("Falha ao enviar comentário. Tente novamente.");
     } finally {
       setIsSubmitting(false);
     }
@@ -91,7 +91,7 @@ export function CommentSection({
     <div className="space-y-8">
       <Card>
         <CardHeader>
-          <CardTitle>Leave a Comment</CardTitle>
+          <CardTitle>Deixe um Comentário</CardTitle>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -102,9 +102,9 @@ export function CommentSection({
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>Nome</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your name" {...field} />
+                        <Input placeholder="Seu nome" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -118,7 +118,7 @@ export function CommentSection({
                       <FormLabel>Email</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="your.email@example.com"
+                          placeholder="seu.email@exemplo.com"
                           {...field}
                         />
                       </FormControl>
@@ -133,7 +133,7 @@ export function CommentSection({
                 name="rating"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Rating</FormLabel>
+                    <FormLabel>Avaliação</FormLabel>
                     <FormControl>
                       <div className="flex gap-1">
                         {[1, 2, 3, 4, 5].map((star) => (
@@ -159,10 +159,10 @@ export function CommentSection({
                 name="content"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Comment</FormLabel>
+                    <FormLabel>Comentário</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Share your thoughts..."
+                        placeholder="Compartilhe seus pensamentos..."
                         className="min-h-[100px]"
                         {...field}
                       />
@@ -173,7 +173,7 @@ export function CommentSection({
               />
 
               <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit Comment"}
+                {isSubmitting ? "Enviando..." : "Enviar Comentário"}
               </Button>
             </form>
           </Form>
@@ -181,10 +181,10 @@ export function CommentSection({
       </Card>
 
       <div className="space-y-6">
-        <h3 className="text-2xl font-semibold">Comments ({comments.length})</h3>
+        <h3 className="text-2xl font-semibold">Comentários ({comments.length})</h3>
         {comments.length === 0 ? (
           <p className="text-muted-foreground">
-            No comments yet. Be the first to share your thoughts!
+            Nenhum comentário ainda. Seja o primeiro a compartilhar seus pensamentos!
           </p>
         ) : (
           <div className="space-y-4">
@@ -205,7 +205,7 @@ export function CommentSection({
                         <div>
                           <h4 className="font-semibold">{comment.name}</h4>
                           <p className="text-sm text-muted-foreground">
-                            {new Date(comment.createdAt).toLocaleDateString()}
+                            {new Date(comment.createdAt).toLocaleDateString('pt-BR')}
                           </p>
                         </div>
                         <div className="flex gap-0.5">
