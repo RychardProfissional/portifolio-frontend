@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="pt-8 border-t border-border grid grid-cols-3 items-center gap-6">
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
             <p className="text-sm text-muted-foreground flex items-center gap-1.5">
               © {currentYear} Feito com{" "}
@@ -89,13 +89,13 @@ export default function Footer() {
             </p>
           </div>
           
-          <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+          <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors text-center">
             Política de Privacidade
           </a>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors group"
+            className="flex items-center justify-end gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors group"
           >
             Voltar ao topo
             <ArrowUp

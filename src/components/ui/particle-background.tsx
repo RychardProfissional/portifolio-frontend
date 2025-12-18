@@ -32,8 +32,7 @@ export default function ParticleBackground() {
     };
 
     const initParticles = () => {
-      const particleCount = Math.floor(window.innerWidth / 10) * 3;
-      console.log(particleCount)
+      const particleCount = Math.min(Math.floor(window.innerWidth / 10) * 3, 100);
       particles = [];
       for (let i = 0; i < particleCount; i++) {
         particles.push({

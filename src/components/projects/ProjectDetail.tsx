@@ -103,7 +103,7 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <Button variant="ghost" asChild className="mb-6">
+      <Button variant="ghost" asChild className="mb-6 sticky top-4 z-10 backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10 rounded-lg">
         <Link href={backLink} className="flex items-center gap-2">
           <ArrowLeft className="w-4 h-4" /> {backText}
         </Link>
