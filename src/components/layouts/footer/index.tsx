@@ -78,14 +78,19 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-sm text-muted-foreground flex items-center gap-1.5">
-            © {currentYear} Feito com{" "}
-            <Heart
-              size={14}
-              className="text-red-500 fill-red-500 animate-pulse"
-            />{" "}
-            por Rychard Antony.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <p className="text-sm text-muted-foreground flex items-center gap-1.5">
+              © {currentYear} Feito com{" "}
+              <Heart
+                size={14}
+                className="text-red-500 fill-red-500 animate-pulse"
+              />{" "}
+              por Rychard Antony.
+            </p>
+            <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Política de Privacidade
+            </a>
+          </div>
 
           <button
             onClick={scrollToTop}

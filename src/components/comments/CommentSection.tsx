@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -33,6 +34,9 @@ const formSchema = z.object({
     message: "Comentário deve ter pelo menos 10 caracteres.",
   }),
   rating: z.number().min(1).max(5),
+  consent: z.boolean().refine((val) => val === true, {
+    message: "Você deve concordar com a política de privacidade para comentar.",
+  }),
 });
 
 interface CommentSectionProps {
@@ -54,6 +58,7 @@ export function CommentSection({
       email: "",
       content: "",
       rating: 5,
+      consent: false,
     },
   });
 
@@ -167,6 +172,37 @@ export function CommentSection({
                         {...field}
                       />
                     </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="consent"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>
+                        Concordo com a{" "}
+                        <a
+                          href="/privacy"
+                          target="_blank"
+                          className="text-primary hover:underline"
+                        >
+                          Política de Privacidade
+                        </a>
+                      </FormLabel>
+                      <p className="text-sm text-muted-foreground">
+                        Seus dados serão armazenados para evitar spam e exibir seu comentário.
+                      </p>
+                    </div>
                     <FormMessage />
                   </FormItem>
                 )}
