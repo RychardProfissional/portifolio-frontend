@@ -71,7 +71,7 @@ export default function ParticleBackground() {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(100, 100, 100, 0.2)";
+        ctx.fillStyle = "rgba(34, 197, 94, 0.2)";
         ctx.fill();
 
         // Draw connections
@@ -99,7 +99,7 @@ export default function ParticleBackground() {
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
-      mouseY = e.clientY;
+      mouseY = e.clientY + window.scrollY;
     };
 
     window.addEventListener("resize", resizeCanvas);
