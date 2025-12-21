@@ -109,7 +109,7 @@ export function ProjectDetail({ slug }: ProjectDetailProps) {
         </Link>
       </Button>
 
-      <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden mb-8 shadow-xl">
+      <div className="relative w-full h-auto rounded-xl overflow-hidden mb-8 shadow-xl">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={project.image || "/placeholder-project.jpg"}
